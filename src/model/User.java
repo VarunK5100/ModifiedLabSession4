@@ -20,6 +20,9 @@ public class User {
     private String messageTextField;
     private ImageIcon image;
     
+    public User() {
+    }
+
     public String getFirstName() {
         return firstNameTextField;
     }

@@ -1,13 +1,15 @@
 package ui;
 import java.awt.CardLayout;
-import model.User;
+
+import javax.swing.JOptionPane;
 /**
  *
  * @author varun
  */
 public class MainFrame extends javax.swing.JFrame {
-    FormPanel formPanel;
-    CardLayout layout;
+    FormPanel formPanel = new FormPanel();
+    CardLayout layout = new CardLayout();
+    ViewPanel viewPanel = new ViewPanel();
 
     public MainFrame() {
         initComponents();
@@ -79,11 +81,15 @@ public class MainFrame extends javax.swing.JFrame {
         boolean submitted = formPanel.getSubmitted();
         if(submitted){
             // If the user has submitted the form
+            viewPanel = new ViewPanel(formPanel.getNewUser());
+            bottomPanel.add(viewPanel);
+            layout = (CardLayout) bottomPanel.getLayout();
+            layout.next(bottomPanel);
         }
         else {
             // If incase the user has not submitted the form
+            JOptionPane.showMessageDialog(this, "No data has been entered");
         }
-        User newUser=new User();
     }
     public static void main(String args[]) {
         try {

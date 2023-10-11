@@ -15,12 +15,15 @@ import model.User;
  */
 public class ViewPanel extends javax.swing.JPanel {
     private User newUser;
-    private ImageIcon imageIcon;
+    public ViewPanel() {
+        newUser = null;
+    }
     public ViewPanel(User newUser) {
         initComponents();
         this.newUser=newUser;
         populateData();
     }
+
     @SuppressWarnings("unchecked")
     private void initComponents() {
         GenderButtonGrp = new javax.swing.ButtonGroup();
@@ -219,9 +222,7 @@ public class ViewPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, selectedImagePath);
             ImageIcon ii = new ImageIcon(selectedImagePath);
             Image imag = ii.getImage().getScaledInstance(displayImageLabel.getWidth(), displayImageLabel.getHeight(), Image.SCALE_SMOOTH);
-            ImageIcon ii2=new ImageIcon(imag);
-            displayImageLabel.setIcon(new ImageIcon(imag));
-            JOptionPane.showMessageDialog(null,"Successfully uploaded","Display Image", JOptionPane.INFORMATION_MESSAGE, ii2);
+            JOptionPane.showMessageDialog(null,"Successfully uploaded","Display Image", JOptionPane.INFORMATION_MESSAGE, ii);
     }
     }
     private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {
