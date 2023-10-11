@@ -4,6 +4,8 @@
  */
 package model;
 
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author varun
@@ -16,6 +18,8 @@ public class User {
     private String gender;
     private String patientCategory;
     private String messageTextField;
+    private ImageIcon image;
+    
     public String getFirstName() {
         return firstNameTextField;
     }
@@ -64,6 +68,62 @@ public class User {
     }
     public void setCategory(String patientCategory){
         this.patientCategory=patientCategory;
+    }
+
+    public String getFirstNameTextField() {
+        return firstNameTextField;
+    }
+
+    public void setFirstNameTextField(String firstNameTextField) {
+        this.firstNameTextField = firstNameTextField;
+    }
+
+    public String getLastNameTextField() {
+        return lastNameTextField;
+    }
+
+    public void setLastNameTextField(String lastNameTextField) {
+        this.lastNameTextField = lastNameTextField;
+    }
+
+    public String getAgeTextField() {
+        return ageTextField;
+    }
+
+    public void setAgeTextField(String ageTextField) {
+        this.ageTextField = ageTextField;
+    }
+
+    public String getEmailTextField() {
+        return emailTextField;
+    }
+
+    public void setEmailTextField(String emailTextField) {
+        this.emailTextField = emailTextField;
+    }
+
+    public String getPatientCategory() {
+        return patientCategory;
+    }
+
+    public void setPatientCategory(String patientCategory) {
+        this.patientCategory = patientCategory;
+    }
+
+    public String getMessageTextField() {
+        return messageTextField;
+    }
+
+    public void setMessageTextField(String messageTextField) {
+        this.messageTextField = messageTextField;
+    }
+
+    public ImageIcon getImage() {
+        return image;
+    }
+
+    public void setImage(ImageIcon image) {
+        this.image = image;
     }
     
 }
